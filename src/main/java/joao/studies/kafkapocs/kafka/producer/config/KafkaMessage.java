@@ -1,4 +1,4 @@
-package joao.studies.kafkapocs.producer.config;
+package joao.studies.kafkapocs.kafka.producer.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

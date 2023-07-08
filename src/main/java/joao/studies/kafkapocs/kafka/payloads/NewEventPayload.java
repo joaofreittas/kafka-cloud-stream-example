@@ -1,6 +1,6 @@
-package joao.studies.kafkapocs.producer.payloads;
+package joao.studies.kafkapocs.kafka.payloads;
 
-import joao.studies.kafkapocs.producer.config.EventSource;
+import joao.studies.kafkapocs.kafka.producer.config.EventSource;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,11 +12,13 @@ import lombok.NoArgsConstructor;
 @Builder
 public class NewEventPayload implements EventSource {
 
+    public static final String EVENT = "NEW_EVENT";
+
     private String message;
 
     @Override
     public String getEvent() {
-        return "NEW_EVENT";
+        return EVENT;
     }
 
 }

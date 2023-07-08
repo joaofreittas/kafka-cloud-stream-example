@@ -1,13 +1,12 @@
-package joao.studies.kafkapocs.producer;
+package joao.studies.kafkapocs.kafka.producer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import joao.studies.kafkapocs.producer.config.KafkaMessage;
+import joao.studies.kafkapocs.kafka.producer.config.KafkaMessage;
+import joao.studies.kafkapocs.kafka.producer.config.OutputBinding;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Component;
-
-import static joao.studies.kafkapocs.producer.config.OutputBinding.KAFKA_NEW_EVENT;
 
 @Slf4j
 @Component
@@ -20,7 +19,7 @@ public class KafkaProducer {
     public void sendMessage(KafkaMessage message) {
         try {
             final var messageAsString = mapper.writeValueAsString(message);
-            streamBridge.send(KAFKA_NEW_EVENT.getNameEvent(), messageAsString);
+            streamBridge.send(OutputBinding.KAFKA_NEW_EVENT.getNameEvent(), messageAsString);
         } catch (Exception e) {
             log.error("[KafkaProducer] :: error to produce message :: {} ", e.getMessage());
         }
