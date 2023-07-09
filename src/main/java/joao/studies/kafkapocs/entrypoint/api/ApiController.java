@@ -1,8 +1,8 @@
-package joao.studies.kafkapocs.entrypoint;
+package joao.studies.kafkapocs.entrypoint.api;
 
-import joao.studies.kafkapocs.kafka.producer.KafkaProducer;
-import joao.studies.kafkapocs.kafka.producer.config.KafkaMessage;
-import joao.studies.kafkapocs.kafka.payloads.NewEventPayload;
+import joao.studies.kafkapocs.infrastructure.messaging.kafka.producer.KafkaProducer;
+import joao.studies.kafkapocs.infrastructure.messaging.kafka.producer.config.KafkaMessage;
+import joao.studies.kafkapocs.infrastructure.messaging.kafka.payloads.NewEventPayload;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

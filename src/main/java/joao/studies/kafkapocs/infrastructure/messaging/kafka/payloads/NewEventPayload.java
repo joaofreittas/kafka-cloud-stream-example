@@ -1,6 +1,6 @@
-package joao.studies.kafkapocs.kafka.payloads;
+package joao.studies.kafkapocs.infrastructure.messaging.kafka.payloads;
 
-import joao.studies.kafkapocs.kafka.producer.config.EventSource;
+import joao.studies.kafkapocs.infrastructure.messaging.kafka.producer.config.EventSource;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

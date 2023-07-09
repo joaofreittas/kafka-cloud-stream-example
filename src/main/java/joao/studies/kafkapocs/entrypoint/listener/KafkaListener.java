@@ -1,7 +1,7 @@
-package joao.studies.kafkapocs.kafka.listener;
+package joao.studies.kafkapocs.entrypoint.listener;
 
-import joao.studies.kafkapocs.kafka.listener.config.MessageBody;
-import joao.studies.kafkapocs.kafka.payloads.NewEventPayload;
+import joao.studies.kafkapocs.entrypoint.listener.config.MessageBody;
+import joao.studies.kafkapocs.infrastructure.messaging.kafka.payloads.NewEventPayload;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;

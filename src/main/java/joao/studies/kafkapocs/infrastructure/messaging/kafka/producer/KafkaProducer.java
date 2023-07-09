@@ -1,8 +1,8 @@
-package joao.studies.kafkapocs.kafka.producer;
+package joao.studies.kafkapocs.infrastructure.messaging.kafka.producer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import joao.studies.kafkapocs.kafka.producer.config.KafkaMessage;
-import joao.studies.kafkapocs.kafka.producer.config.OutputBinding;
+import joao.studies.kafkapocs.infrastructure.messaging.kafka.producer.config.KafkaMessage;
+import joao.studies.kafkapocs.infrastructure.messaging.kafka.producer.config.OutputBinding;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.function.StreamBridge;

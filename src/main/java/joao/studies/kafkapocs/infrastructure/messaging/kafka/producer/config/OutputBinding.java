@@ -1,4 +1,4 @@
-package joao.studies.kafkapocs.kafka.producer.config;
+package joao.studies.kafkapocs.infrastructure.messaging.kafka.producer.config;
 
 public enum OutputBinding {
 

@@ -8,6 +8,14 @@ spring:
                     configuration:
                         auto.offset.reset: earliest
                 bindings:
+                    newNotification-in-0:
+                        consumer:
+                            startOffset: latest
+                            enableDlq: false
+                            configuration:
+                                max.poll.records: 500
+                                max.poll.interval.ms: 120000
+
                     kafkaNewEvent-in-0:
                         consumer:
                             startOffset: latest
@@ -25,6 +33,14 @@ spring:
                         maxAttempts: 1
                         concurrency: 1
 
+                newNotification-in-0:
+                    destination: notification-manager_new-notification
+                    group: kafka-ms
+                    contentType: application/json
+                    consumer:
+                        maxAttempts: 1
+                        concurrency: 1
+
                 kafkaNewEvent-out-0:
                     destination: kafka-new-event
                     content-type: application/json
@@ -32,5 +48,17 @@ spring:
                     contentType: application/json
 
 
-    function:
-        definition: kafkaNewEvent
+        function:
+            definition: kafkaNewEvent;newNotification
+
+    mail:
+        host: ${HOST_EMAIL:smtp.gmail.com}
+        username: ${USERNAME_EMAIL}
+        password: ${PASSWORD_EMAIL}
+        port: ${HOST_PORT:587}
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
